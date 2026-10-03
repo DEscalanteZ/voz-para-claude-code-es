@@ -225,7 +225,8 @@ def cerebro(frases, enviar=enviar_a_claude, avisar=sonido, reloj=time.time):
         resto = (r2.group(1) if r2 else "").strip(" ,.;:!?¡¿…")
         if PAUSA.exists():                            # dormido: solo atiende a «despierta»
             if normal(resto).startswith("despierta"):
-                PAUSA.unlink(); avisar("Glass"); apuntar("despierto por voz")
+                PAUSA.unlink(); (PAUSA.parent / "APAGADA").unlink(missing_ok=True)
+                avisar("Glass"); apuntar("despierto por voz")
             continue
         avisar("Tink")
         ventana = 0.0
@@ -247,7 +248,7 @@ def despachar(orden, enviar, avisar):
         apuntar("aviso oído, sin orden"); return []
     if n.startswith(("a dormir", "duermete")):
         if "--prueba" not in sys.argv:
-            PAUSA.touch()
+            PAUSA.touch(); (PAUSA.parent / "APAGADA").touch()     # dormir = oído y voz
         avisar("Bottle"); apuntar("pausa por voz"); return []
     try:
         enviar(orden)

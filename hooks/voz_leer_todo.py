@@ -26,6 +26,8 @@ VIGENCIA_S = 90
 SI = re.compile(r"^(si|si,? (si|claro|venga|por favor|leemelo|leelo|todo|entero|completo)|venga,? si|leemelo|leelo( entero| todo)?|"
                 r"todo|entero|completo|el texto completo|el completo|lee(lo)? (todo|entero))\W*$")
 NO = re.compile(r"^(no|no,? gracias|solo el resumen|el resumen|dejalo|no hace falta)\W*$")
+DORMIR = re.compile(r"^(duerme(te)?|a dormir|vete a dormir|callate|silencio|apaga(te)?( la voz)?)\W*$")
+DESPERTAR = re.compile(r"^(despierta(te)?|habla|enciende(te)?( la voz)?|vuelve a hablar)\W*$")
 ULTIMA = re.compile(r"^(leeme|lee|repite(me)?) (la )?(ultima )?(respuesta|lo ultimo)( entera| completa)?\W*$")
 
 
@@ -51,6 +53,16 @@ def main() -> None:
     # reloj del turno para las frases de espera (voz_avance.py)
     (DIR / "turno.json").write_text(json.dumps({"sesion": entrada.get("session_id", ""),
                                                  "inicio": time.time()}))
+    # «duerme» / «despierta»: apaga o enciende TODO (voz y oído), sin pasar por el modelo
+    if DORMIR.match(dicho):
+        callar()
+        (DIR / "APAGADA").touch(); (DIR / "OYE_PAUSADO").touch()
+        parar("😴 Voz y oído dormidos. Escribe «despierta» para volver.")
+    if DESPERTAR.match(dicho):
+        for f in ("APAGADA", "OYE_PAUSADO"):
+            (DIR / f).unlink(missing_ok=True)
+        decir("Aquí estoy.")
+        parar("🔊 Voz y oído despiertos.")
     pendiente = DIR / "pendiente_larga.txt"
     if not (SI.match(dicho) or ULTIMA.match(dicho)):
         callar()                       # mensaje nuevo: si estaba leyendo algo largo, se calla

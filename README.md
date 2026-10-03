@@ -55,7 +55,7 @@ aceptar.
 | Pedirle algo | «Oye, Claude, …» (espera el tintineo si haces pausa) |
 | Que lea entera una respuesta larga | «Sí» / «léemelo» / «todo» |
 | Volver a oír la última respuesta | «Léeme la última respuesta» |
-| Que deje de escuchar | «Oye, Claude, a dormir» (y «Oye, Claude, despierta») |
+| Que deje de escuchar y de hablar | «Oye, Claude, a dormir» o escribir «duerme» (y «despierta» para volver) |
 | Silenciar la voz | crear `~/.claude/voz/APAGADA` |
 | Cambiar la voz (tono, ritmo, hombre/mujer) | `~/.claude/voz/voz.json` |
 | Cambiar la palabra de aviso o el vocabulario | `~/.claude/oye/config.json` |
