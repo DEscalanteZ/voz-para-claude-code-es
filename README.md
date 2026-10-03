@@ -1,6 +1,6 @@
 # Despedí al teclado: le hablo a Claude Code y me contesta en voz alta
 
-**Gratis, sin claves, y la voz y el oído no salen de tu Mac.** Dices «Oye, Claude», te escucha, trabaja y te lo cuenta hablando.
+**Gratis, sin claves, y la voz y el oído no salen de tu Mac.** Dices «Oye, Claude» o el nombre que tenga tu Agente, te escucha, trabaja y te lo cuenta hablando.
 
 **Versión 0.1** · Si algo falla o no se sostiene, [abre un aviso (issue)](https://github.com/DEscalanteZ/voz-para-claude-code-es/issues).
 
