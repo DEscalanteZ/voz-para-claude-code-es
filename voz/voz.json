@@ -1,0 +1,8 @@
+{
+  "_que_es": "Ajustes de la voz Piper. hablante: 0 hombre, 1 mujer (en este modelo). ritmo: menos de 1 = más rápido. entonacion y variacion: más alto = más expresiva. tono: más de 1 = más aguda.",
+  "hablante": 1,
+  "ritmo": 0.86,
+  "entonacion": 1.0,
+  "variacion": 1.25,
+  "tono": 1.04
+}

@@ -1,0 +1,7 @@
+{
+  "_que_es": "primeras: cómo empieza la llamada; nombres: a quién se llama (y lo que Whisper entiende en su lugar); app: dónde se pega la orden; vocabulario: palabras que suelen salir en tus órdenes (ayuda a escribirlas bien).",
+  "primeras": "oye|oie|olle|oyes|hey|ey|oiga",
+  "nombres": "claude|claud|claudet+e?|clod|clode|clot|klod",
+  "app": "Claude",
+  "vocabulario": "Claude, Claude Code, GitHub, Python."
+}
