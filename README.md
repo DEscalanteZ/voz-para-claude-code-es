@@ -1,4 +1,4 @@
-# Despedí al teclado: le hablo a Claude Code y me contesta en voz alta
+# Ya no le escribo a Claude Code: le digo «Oye, Claude», me contesta hablando y no me cuesta ni un euro
 
 **Gratis, sin claves, y la voz y el oído no salen de tu Mac.** Dices «Oye, Claude» o el nombre que tenga tu Agente, te escucha, trabaja y te lo cuenta hablando.
 

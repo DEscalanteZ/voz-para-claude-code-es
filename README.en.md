@@ -1,4 +1,4 @@
-# I fired my keyboard: I talk to Claude Code and it answers out loud
+# I don't type to Claude Code anymore: I say "Oye, Claude", it answers out loud, and it costs me nothing
 
 **Free, no API keys, and the voice and the ears stay on your Mac.**
 
